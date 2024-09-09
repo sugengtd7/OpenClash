@@ -7,10 +7,11 @@ function index()
 
 	local page
 	
-	page = entry({"admin", "services", "openclash"}, alias("admin", "services", "openclash", "client"), _("OpenClash"), 50)
+	page = entry({"admin", "services", "openclash"}, alias("admin", "services", "openclash", "client"), _("OpenClash"), 1)
 	page.dependent = true
 	page.acl_depends = { "luci-app-openclash" }
-	entry({"admin", "services", "openclash", "client"},form("openclash/client"),_("Overviews"), 20).leaf = true
+	entry({"admin", "services", "openclash", "client"},form("openclash/client"),_("Ringkasan"), 20).leaf = true
+	entry({"admin", "services", "openclash", "yacd"},template("openclash/yacd"),_("Panel Yacd"), 23).leaf = true
 	entry({"admin", "services", "openclash", "status"},call("action_status")).leaf=true
 	entry({"admin", "services", "openclash", "state"},call("action_state")).leaf=true
 	entry({"admin", "services", "openclash", "startlog"},call("action_start")).leaf=true
@@ -77,25 +78,23 @@ function index()
 	entry({"admin", "services", "openclash", "check_core"}, call("action_check_core"))
 	entry({"admin", "services", "openclash", "core_download"}, call("core_download"))
 	entry({"admin", "services", "openclash", "settings"},cbi("openclash/settings"),_("Plugin Settings"), 30).leaf = true
-	entry({"admin", "services", "openclash", "config-overwrite"},cbi("openclash/config-overwrite"),_("Overwrite Settings"), 40).leaf = true
-	entry({"admin", "services", "openclash", "servers"},cbi("openclash/servers"),_("Onekey Create"), 50).leaf = true
+	entry({"admin", "services", "openclash", "config-overwrite"},cbi("openclash/config-overwrite"),_("Tulis Ulang Pengaturan"), 40).leaf = true
 	entry({"admin", "services", "openclash", "other-rules-edit"},cbi("openclash/other-rules-edit"), nil).leaf = true
 	entry({"admin", "services", "openclash", "custom-dns-edit"},cbi("openclash/custom-dns-edit"), nil).leaf = true
 	entry({"admin", "services", "openclash", "other-file-edit"},cbi("openclash/other-file-edit"), nil).leaf = true
-	entry({"admin", "services", "openclash", "rule-providers-settings"},cbi("openclash/rule-providers-settings"),_("Rule Providers Append"), 60).leaf = true
+	entry({"admin", "services", "openclash", "pengaturan-penyedia-rule"},cbi("openclash/pengaturan-penyedia-rule"),_("Tambahkan Penyedia Rule"), 60).leaf = true
 	entry({"admin", "services", "openclash", "game-rules-manage"},form("openclash/game-rules-manage"), nil).leaf = true
 	entry({"admin", "services", "openclash", "rule-providers-manage"},form("openclash/rule-providers-manage"), nil).leaf = true
 	entry({"admin", "services", "openclash", "proxy-provider-file-manage"},form("openclash/proxy-provider-file-manage"), nil).leaf = true
 	entry({"admin", "services", "openclash", "rule-providers-file-manage"},form("openclash/rule-providers-file-manage"), nil).leaf = true
 	entry({"admin", "services", "openclash", "game-rules-file-manage"},form("openclash/game-rules-file-manage"), nil).leaf = true
-	entry({"admin", "services", "openclash", "config-subscribe"},cbi("openclash/config-subscribe"),_("Config Subscribe"), 70).leaf = true
-	entry({"admin", "services", "openclash", "config-subscribe-edit"},cbi("openclash/config-subscribe-edit"), nil).leaf = true
 	entry({"admin", "services", "openclash", "servers-config"},cbi("openclash/servers-config"), nil).leaf = true
 	entry({"admin", "services", "openclash", "groups-config"},cbi("openclash/groups-config"), nil).leaf = true
 	entry({"admin", "services", "openclash", "proxy-provider-config"},cbi("openclash/proxy-provider-config"), nil).leaf = true
 	entry({"admin", "services", "openclash", "rule-providers-config"},cbi("openclash/rule-providers-config"), nil).leaf = true
 	entry({"admin", "services", "openclash", "config"},form("openclash/config"),_("Config Manage"), 80).leaf = true
-	entry({"admin", "services", "openclash", "log"},cbi("openclash/log"),_("Server Logs"), 90).leaf = true
+	entry({"admin", "services", "openclash", "oceditor"},template("openclash/oceditor"),_("Edit Konfig"), 90).leaf = true
+	entry({"admin", "services", "openclash", "log"},cbi("openclash/log"),_("Log OC"), 110).leaf = true
 
 end
 local fs = require "luci.openclash"
