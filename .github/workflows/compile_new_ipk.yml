@@ -19,7 +19,7 @@ jobs:
       - name: Clone OpenClash Repository
         uses: actions/checkout@v4
         with:
-          ref: main  # Ganti dengan cabang yang ada
+          ref: master  # Ganti dengan cabang yang ada
           fetch-depth: 0  # Ambil semua riwayat commit
 
       - name: New Version
