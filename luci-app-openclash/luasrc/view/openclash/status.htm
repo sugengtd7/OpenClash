@@ -1,29 +1,6 @@
 <head>
 <style>
-.dot-typing{position:relative;left:-9999px;width:10px;height:10px;border-radius:5px;background-color:#9880ff;color:#9880ff;box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff;animation:dotTyping 1.5s infinite linear}@keyframes dotTyping{0%{box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff}16.667%{box-shadow:9984px -10px 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff}33.333%{box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff}50%{box-shadow:9984px 0 0 0 #9880ff,9999px -10px 0 0 #9880ff,10014px 0 0 0 #9880ff}66.667%{box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff}83.333%{box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px -10px 0 0 #9880ff}100%{box-shadow:9984px 0 0 0 #9880ff,9999px 0 0 0 #9880ff,10014px 0 0 0 #9880ff}}
-.radio-button{
-	display: none;
-	white-space: nowrap;
-	background-color: #d1d1d1;
-	border-radius: 4px;
-}
-
-.radio-button input[type="radio"] {
-	display: none;
-}
-   
-.radio-button label {
-	display: inline-block;
-	font-size: 14px;
-	padding: 4px 5px;
-	color: white;
-	cursor: pointer;
-	border-radius: 4px;
-}
-
-.radio-button input[type="radio"]:checked+label {
-	background-color: #1080c1;
-}
+.dot-typing{position:relative;left:-9999px;width:10px;height:10px;border-radius:5px;background-color:#000;color:#000;box-shadow:9984px 0 0 0 #002b49,9999px 0 0 0 #002b49,10014px 0 0 0 #002b49;animation:dotTyping 1.5s infinite linear}.radio-button{display:none;white-space:nowrap;background-color:#547185;border-radius:4px}.radio-button input[type="radio"]{display:none}.radio-button label{display:inline-block;font-size:12px;padding:2px 3px;color:#fff;cursor:pointer;border-radius:4px}.radio-button input[type="radio"]:checked+label{background-color:#002b49}
 </style>
 </head>
 <%
@@ -35,15 +12,15 @@
 	<table width="100%">
 	    <tr>
 	  	<td colspan="4" width="100%">
-	  		<p style="margin: 10px 0; text-align: center">
+	  		<p style="margin: 0px 0; text-align: center">
 				<%
 					if uci:get("openclash", "config", "enable_meta_core") ~= '1' then
 				%>
-	      				<img id="_logo" src="/luci-static/resources/openclash/img/logo.png?<%=random%>" loading="lazy" width="150px" height="150px" onload="return logo_check(this,this.src,'https://raw.githubusercontent.com/vernesong/OpenClash/<%=RELEASE_BRANCH%>/img/logo.png')" onerror="return logo_error(this,'/luci-static/resources/openclash/img/logo.png?<%=random%>')" title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
+	      				<img id="_logo" src="/luci-static/resources/openclash/img/logo.png?<%=random%>" loading="lazy" width="150px"title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
 				<%
 					else
 				%>
-						<img id="_logo" src="/luci-static/resources/openclash/img/meta.png?<%=random%>" loading="lazy" width="150px" height="150px" onload="return logo_check(this,this.src,'https://raw.githubusercontent.com/vernesong/OpenClash/<%=RELEASE_BRANCH%>/img/meta.png')" onerror="return logo_error(this,'/luci-static/resources/openclash/img/meta.png?<%=random%>')" title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
+						<img id="_logo" src="/luci-static/resources/openclash/img/meta.png?<%=random%>" loading="lazy" width="150px"title="Hello, World!" alt="OpenClash" onclick="return homepage()" />
 				<%
 					end
 				%>
@@ -53,7 +30,7 @@
 	  		</p>
 	    </td></tr>
 	    <tr><td colspan="4" width="100%">
-     		<p style="margin: 10px 0; text-align: center">
+     		<p style="margin: 0px 0; text-align: center">
 				<img id="gitbook" src="/luci-static/resources/openclash/img/Wiki.svg?<%=random%>" loading="lazy" alt="GitBook" width="50px" height="20px" onerror="return imgerrorfuns(this,'https://img.shields.io/badge/Wiki--lightgrey?logo=GitBook&style=social')" onclick="return gitbookpage()" />
 				&nbsp;&nbsp;&nbsp;
 				<img id="wiki" src="/luci-static/resources/openclash/img/Tutorials.svg?<%=random%>" loading="lazy" alt="Wiki" width="75px" height="20px" onerror="return imgerrorfuns(this,'https://img.shields.io/badge/Tutorials--lightgrey?logo=Wikipedia&style=social')" onclick="return wikipage()" />
@@ -66,7 +43,7 @@
         	</p>
         </td></tr>
 	    <tr><td width="100%" colspan="4">
-	  		<div style="margin: 10px 0; text-align: center" id="_clashstart">
+	  		<div style="margin: 0px 0; text-align: center" id="_clashstart">
 	  			<b><%:Tip: after started, please wait patiently until the connection is normal%></b>
 			</div>
 	    </td></tr>
@@ -89,7 +66,7 @@
 				</span></td><td width="25%"><%:Control Panel Login Secret%></td><td width="25%" align="left" id="_dase"><%:Collecting data...%></td></tr>
 		<tr><td colspan="4"><div style="margin: 10px 0; text-align: center"><span id="_web" style="width: 33%; display: inline-block;"></span><span id="_webm" style="width: 33%; display: inline-block;"><%:Collecting data...%></span><span id="_webo" style="width: 33%; display: inline-block;"></span></div></td></tr>
 		<tr id="tool_label2"><td colspan="4">
-			<div style="margin: 10px 0; text-align: center">
+			<div style="margin: 0px 0; text-align: center">
 <span>
 &nbsp;&nbsp;<%:Up:%>&nbsp;
 	<span id="upload_">
@@ -162,7 +139,7 @@
 			</div>
 		</td>
 	</tr>
-	<tr id="hid_1"><td width="100%" colspan="4"><p style="margin: 10px 0; text-align: center"><b><%:Quick Operation%></b></p></td></tr>
+	<tr id="hid_1"><td width="100%" colspan="4"><p style="margin: 0px 0; text-align: center"><b><%:Quick Operation%></b></p></td></tr>
     <tr id="hid_2">
 		<td width="25%" align="center"><p style="margin: 10px 0; text-align: center" id="_close_all_connection"><%:Collecting data...%></p></td>
 		<td width="25%" align="center"><p style="margin: 10px 0; text-align: center" id="_reload_firewall"><%:Collecting data...%></p></td>
