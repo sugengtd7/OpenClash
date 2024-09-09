@@ -16,10 +16,11 @@ jobs:
       version: ${{ steps.version.outputs.version }}
       current_version: ${{ steps.current_version.outputs.version }}
     steps:
-      - name: Clone Repository
+      - name: Clone OpenClash Repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: main  # Ganti dengan cabang yang ada
+          fetch-depth: 0  # Ambil semua riwayat commit
 
       - name: New Version
         id: version
